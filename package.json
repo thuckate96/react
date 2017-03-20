@@ -1,0 +1,15 @@
+{
+  "name": "pro1",
+  "version": "1.0.0",
+  "description": "my first react",
+  "main": "app",
+  "scripts": {
+    "test": "no"
+  },
+  "author": "vi van thuc",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  }
+}
