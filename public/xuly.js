@@ -11,7 +11,8 @@ var Dongvat = React.createClass({
     return {tongHocVien: this.props.tongHocVien};
   },
   addStudents: function(){
-    this.setState({tongHocVien: parseInt(this.state.tongHocVien)+1});
+    this.state.tongHocVien = parseInt(this.state.tongHocVien) +1;
+    this.setState(this.state);
   },
   render: function(){
     return(
@@ -37,8 +38,33 @@ var Khoahoc = React.createClass({
     );
   }
 });
+
+//Lam viec voi Reference
+var InputTag = React.createClass({
+  show: function(){
+    var text = this.refs.txt.value;
+    //alert(text);
+    var hoaqua = this.refs.hoaqua.value;
+    alert(hoaqua);
+  },
+  render: function(){
+    return(
+      <div>
+      <select ref="hoaqua">
+        <option value="tao">Qua tao  </option>
+        <option>Qua Chanh </option>
+        <option>Qua Cam </option>
+        <option>Qua chuoi </option>
+      </select>
+      <input type="text" ref="txt"/>
+      <button onClick={this.show}>Hien thi </button>
+      </div>
+    );
+  }
+});
 ReactDOM.render(
   <div>
+  <InputTag />
   <Dongvat ten="Con meo" tongHocVien="10">Day la con meo may ak </Dongvat>
   <Dongvat ten="Con cho" tongHocVien="20">Day la con cho may ak </Dongvat>
   </div>,
